@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable-v24/id_circle_cl.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/background.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/canvas_background.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/divider.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_account.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_add_btn.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_add_btn_dark.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_arrow_back.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_bookmark.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_check_btn.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_download.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_edit.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_email.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_file_duplicate.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_location.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_menu_burger.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_menu_receipt.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_person.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_phone.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/ic_send_new.xml" value="1.0" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/id_circle_in.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/id_circle_pl.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/id_circle_re.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/profile_circle_overlay.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/profile_pic_circle.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/rect_small_height.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/side_nav_bar.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/small_circle.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/drawable/toolbar.xml" value="0.2890625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-750x360/lists_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-750x360/new_invoices_list_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-h750dp-land/lists_item.xml" value="0.3242857142857143" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land-750x360/lists_item.xml" value="0.3546875" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land-750x360/new_invoices_list_item.xml" value="0.4720720720720721" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land-750x360/new_receipts_list_item.xml" value="0.3546875" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/fragment_account.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/fragment_add_client.xml" value="0.3546875" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/fragment_clients_list.xml" value="0.4720720720720721" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/fragment_invoices_list.xml" value="0.3546875" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/fragment_make_list.xml" value="0.31437598736176936" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/fragment_receipts_list.xml" value="0.3546875" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/fragment_saved_lists.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/lists_item.xml" value="0.75" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/new_invoices_list_item.xml" value="0.4720720720720721" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/new_receipts_list_item.xml" value="0.4720720720720721" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-land/saved_lists_item_two.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-sw360dp/fragment_make_list.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w320dp/fragment_make_list.xml" value="0.532520325203252" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w320dp/invoices_list_item.xml" value="0.655" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w320dp/receipts_list_item.xml" value="0.67" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w320dp/saved_lists_item_two.xml" value="0.9" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp-land/lists_item.xml" value="1.0" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp-land/new_invoices_list_item.xml" value="0.4720720720720721" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp-land/new_receipts_list_item.xml" value="0.3546875" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp/fragment_invoice_price_info.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp/fragment_make_list.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp/invoices_list_item.xml" value="0.5" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp/lists_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp/new_invoices_list_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp/new_receipts_list_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp/receipts_list_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w360dp/saved_lists_item_two.xml" value="0.3546875" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w412dp/lists_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w412dp/new_invoices_list_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w412dp/new_receipts_list_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w640dp-land/saved_lists_item_two.xml" value="0.3625" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w640dp/saved_lists_item_two.xml" value="0.4720720720720721" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout-w800dp-land/new_invoices_list_item.xml" value="0.709375" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/app_bar_main.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/clients_list_item.xml" value="0.5" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/content_main.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/dropdown_list_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_account.xml" value="0.25" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_account_information.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_add_client.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_blank.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_client_menu_dialog.xml" value="0.5" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_clients_list.xml" value="0.25" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_create_account.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_help.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_home.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_invoice_client_info.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_invoice_menu_dialog.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_invoice_new_client.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_invoice_preview.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_invoice_preview_bitmap.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_invoice_price_info.xml" value="1.0179372197309418" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_invoices_list.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_item_list_dialog_list_dialog.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_item_list_dialog_list_dialog_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_make_list.xml" value="0.75" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_menu_dialog_.xml" value="0.5" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_preview.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_preview_menu_dialog.xml" value="0.5" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_receipts_list.xml" value="0.25" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_saved_clients_menu_dialog.xml" value="0.32305795314426633" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_saved_lists.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_share_download_list.xml" value="0.22" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/fragment_stats.xml" value="0.25" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/history_list_item.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/invoices_list_item.xml" value="0.5" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/lists_item.xml" value="0.655" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/nav_drawer_header.xml" value="0.33" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/nav_header_main.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/new_invoices_list_item.xml" value="0.5" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/new_receipts_list_item.xml" value="0.5" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/preview_design.xml" value="0.1865432538269847" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/receipts_list_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/saved_clients_menu_item.xml" value="0.5" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/layout/saved_lists_item_two.xml" value="0.67" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/gidbecxa/AndroidStudioProjects/PriceelistApp/app/src/main/res/menu/drawer_menu.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

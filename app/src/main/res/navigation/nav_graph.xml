@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/savedListsFragment">
+
+    <fragment
+        android:id="@+id/savedListsFragment"
+        android:name="com.example.priceelist.pricelist.SavedListsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_saved_lists">
+        <action
+            android:id="@+id/action_savedListsFragment_to_makeListFragment"
+            app:destination="@id/makeListFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_savedListsFragment_to_menuDialogFragment"
+            app:destination="@id/menuDialogFragment" />
+        <action
+            android:id="@+id/action_savedListsFragment_to_clientsListFragment"
+            app:destination="@id/clientsListFragment"/>
+        <action
+            android:id="@+id/action_savedListsFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_savedListsFragment_to_invoicesListFragment"
+            app:destination="@id/invoicesListFragment" />
+        <action
+            android:id="@+id/action_savedListsFragment_to_receiptsListFragment"
+            app:destination="@id/receiptsListFragment" />
+        <action
+            android:id="@+id/action_savedListsFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/makeListFragment"
+        android:name="com.example.priceelist.pricelist.MakeListFragment"
+        android:label=""
+        tools:layout="@layout/fragment_make_list">
+        <argument
+            android:name="item_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_makeListFragment_to_savedListsFragment"
+            app:destination="@id/savedListsFragment"
+            app:popUpTo="@id/savedListsFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+
+    <dialog
+        android:id="@+id/menuDialogFragment"
+        android:name="com.example.priceelist.pricelist.MenuDialogFragment"
+        android:label=""
+        tools:layout="@layout/fragment_menu_dialog_">
+        <argument
+            android:name="item_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_menuDialogFragment_to_savedListsFragment"
+            app:destination="@id/savedListsFragment" />
+        <action
+            android:id="@+id/action_menuDialogFragment_to_shareDownloadListFragment"
+            app:destination="@id/shareDownloadListFragment" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/clientsListFragment"
+        android:name="com.example.priceelist.client.ClientsListFragment"
+        android:label=""
+        tools:layout="@layout/fragment_clients_list">
+        <action
+            android:id="@+id/action_clientsListFragment_to_addClientFragment"
+            app:destination="@id/addClientFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+
+            android:id="@+id/action_clientsListFragment_to_clientMenuDialogFragment"
+            app:destination="@id/clientMenuDialogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.priceelist.account.AccountFragment"
+        android:label=""
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_accountFragment_to_accountInformationFragment"
+            app:destination="@id/accountInformationFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_accountFragment_to_statsFragment"
+            app:destination="@id/statsFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_accountFragment_to_invoicesListFragment"
+            app:destination="@id/invoicesListFragment"
+            app:popUpTo="@id/invoicesListFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_accountFragment_to_receiptsListFragment"
+            app:destination="@id/receiptsListFragment"
+            app:popUpTo="@id/receiptsListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/invoicesListFragment"
+        android:name="com.example.priceelist.invoice.InvoicesListFragment"
+        android:label=""
+        tools:layout="@layout/fragment_invoices_list">
+        <action
+            android:id="@+id/action_invoicesListFragment_to_invoiceMenuDialogFragment"
+            app:destination="@id/invoiceMenuDialogFragment" />
+        <action
+            android:id="@+id/action_invoicesListFragment_to_invoiceClientInfoFragment"
+            app:destination="@id/invoiceClientInfoFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_invoicesListFragment_to_previewFragment"
+            app:destination="@id/previewFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_invoicesListFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/receiptsListFragment"
+        android:name="com.example.priceelist.invoice.receipt.ReceiptsListFragment"
+        android:label=""
+        tools:layout="@layout/fragment_receipts_list" >
+        <action
+            android:id="@+id/action_receiptsListFragment_to_invoiceClientInfoFragment"
+            app:destination="@id/invoiceClientInfoFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_receiptsListFragment_to_previewFragment"
+            app:destination="@id/previewFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_receiptsListFragment_to_invoiceMenuDialogFragment"
+            app:destination="@id/invoiceMenuDialogFragment" />
+        <action
+            android:id="@+id/action_receiptsListFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/addClientFragment"
+        android:name="com.example.priceelist.client.AddClientFragment"
+        android:label=""
+        tools:layout="@layout/fragment_add_client">
+        <action
+            android:id="@+id/action_addClientFragment_to_clientsListFragment"
+            app:destination="@id/clientsListFragment"
+            app:popUpTo="@id/clientsListFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"/>
+        <argument
+            android:name="client_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <dialog
+        android:id="@+id/clientMenuDialogFragment"
+        android:name="com.example.priceelist.client.ClientMenuDialogFragment"
+        android:label=""
+        tools:layout="@layout/fragment_client_menu_dialog">
+        <argument
+            android:name="client_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_clientMenuDialogFragment_to_clientsListFragment"
+            app:destination="@id/clientsListFragment" />
+        <action
+            android:id="@+id/action_clientMenuDialogFragment_to_addClientFragment"
+            app:destination="@id/addClientFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/invoiceMenuDialogFragment"
+        android:name="com.example.priceelist.invoice.InvoiceMenuDialogFragment"
+        android:label=""
+        tools:layout="@layout/fragment_invoice_menu_dialog">
+        <argument
+            android:name="invoice_id"
+            app:argType="integer" />
+        <argument
+            android:name="file_name"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_invoiceMenuDialogFragment_to_invoicesListFragment"
+            app:destination="@id/invoicesListFragment" />
+        <action
+            android:id="@+id/action_invoiceMenuDialogFragment_to_invoicePriceInfoFragment"
+            app:destination="@id/invoicePriceInfoFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_invoiceMenuDialogFragment_to_previewFragment"
+            app:destination="@id/previewFragment"/>
+        <action
+            android:id="@+id/action_invoiceMenuDialogFragment_to_invoiceNewClientFragment"
+            app:destination="@id/invoiceNewClientFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_invoiceMenuDialogFragment_to_invoicePreviewFragment"
+            app:destination="@id/invoicePreviewFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </dialog>
+    <fragment
+        android:id="@+id/invoiceClientInfoFragment"
+        android:name="com.example.priceelist.invoice.InvoiceClientInfoFragment"
+        android:label=""
+        tools:layout="@layout/fragment_invoice_client_info">
+        <argument
+            android:name="list_type"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="client_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_invoiceClientInfoFragment_to_invoicePriceInfoFragment"
+            app:destination="@id/invoicePriceInfoFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"/>
+        <action
+            android:id="@+id/action_invoiceClientInfoFragment_to_invoicesListFragment"
+            app:destination="@id/invoicesListFragment"
+            app:popUpTo="@id/invoicesListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_invoiceClientInfoFragment_to_savedClientsMenuDialog"
+            app:destination="@id/savedClientsMenuDialog" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/invoicePreviewFragment"
+        android:name="com.example.priceelist.invoice.InvoicePreviewFragment"
+        android:label=""
+        tools:layout="@layout/fragment_invoice_preview">
+        <argument
+            android:name="client_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="client_name"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="client_phone"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="client_email"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="client_address"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_1"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_1"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_1"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_2"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_2"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_2"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_3"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_3"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_3"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_4"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_4"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_4"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_5"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_5"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_5"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_6"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_6"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_6"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_7"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_7"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_7"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_8"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_8"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_8"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_9"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_9"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_9"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_10"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_10"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_10"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="list_type"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="invoice_note"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="file_name"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="date"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="invoice_number"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="receiver_note"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="cleared"
+            android:defaultValue="false"
+            app:argType="boolean"/>
+
+        <argument
+            android:name="invoice_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_invoicePreviewFragment_to_invoicesListFragment"
+            app:destination="@id/invoicesListFragment"
+            app:popUpTo="@id/invoicesListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_invoicePreviewFragment_to_invoicePriceInfoFragment"
+            app:destination="@id/invoicePriceInfoFragment"
+            app:popUpTo="@id/invoicePriceInfoFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_invoicePreviewFragment_to_receiptsListFragment"
+            app:destination="@id/receiptsListFragment"
+            app:popUpTo="@id/receiptsListFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_invoicePreviewFragment_to_invoicesListFragment2"
+            app:destination="@id/invoicesListFragment"
+            app:popUpTo="@id/invoicesListFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/invoicePriceInfoFragment"
+        android:name="com.example.priceelist.invoice.InvoicePriceInfoFragment"
+        android:label=""
+        tools:layout="@layout/fragment_invoice_price_info">
+        <argument
+            android:name="client_name"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="client_phone"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="client_email"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="client_address"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="list_type"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="client_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+        <argument
+            android:name="item_1"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_1"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_1"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_2"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_2"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_2"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_3"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_3"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_3"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_4"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_4"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_4"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_5"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_5"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_5"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_6"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_6"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_6"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_7"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_7"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_7"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_8"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_8"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_8"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_9"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_9"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_9"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="item_10"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="unit_10"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="amount_10"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="total"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="date"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="invoice_number"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="invoice_note"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="file_name"
+            android:defaultValue=""
+            app:argType="string"/>
+
+        <argument
+            android:name="receiver_note"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="cleared"
+            android:defaultValue="false"
+            app:argType="boolean"/>
+
+        <argument
+            android:name="invoice_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_invoicePriceInfoFragment_to_invoiceClientInfoFragment"
+            app:destination="@id/invoiceClientInfoFragment"
+            app:popUpTo="@id/invoiceClientInfoFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_invoicePriceInfoFragment_to_invoicePreviewFragment"
+            app:destination="@id/invoicePreviewFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_invoicePriceInfoFragment_to_previewFragment"
+            app:destination="@id/previewFragment"
+            app:popUpTo="@id/previewFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_invoicePriceInfoFragment_to_invoiceNewClientFragment"
+            app:destination="@id/invoiceNewClientFragment"
+            app:popUpTo="@id/invoiceNewClientFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_invoicePriceInfoFragment_to_invoiceMenuDialogFragment"
+            app:destination="@id/invoiceMenuDialogFragment"
+            app:popUpTo="@id/invoiceMenuDialogFragment"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+    <dialog
+        android:id="@+id/savedClientsMenuDialog"
+        android:name="com.example.priceelist.sharedfragment.SavedClientsMenuDialog"
+        android:label=""
+        tools:layout="@layout/fragment_saved_clients_menu_dialog">
+        <argument
+            android:name="list_type"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="invoice_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_savedClientsMenuDialog_to_invoiceClientInfoFragment"
+            app:destination="@id/invoiceClientInfoFragment"
+            app:popUpTo="@id/invoiceClientInfoFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_savedClientsMenuDialog_to_invoiceNewClientFragment"
+            app:destination="@id/invoiceNewClientFragment"
+            app:popUpTo="@id/invoiceNewClientFragment"
+            app:popUpToInclusive="true"/>
+    </dialog>
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="com.example.priceelist.invoice.PreviewFragment"
+        android:label=""
+        tools:layout="@layout/fragment_preview" >
+        <argument
+            android:name="invoice_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_previewFragment_to_invoicesListFragment"
+            app:destination="@id/invoicesListFragment"
+            app:popUpTo="@id/invoicesListFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_previewFragment_to_invoicePriceInfoFragment"
+            app:destination="@id/invoicePriceInfoFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_previewFragment_to_previewMenuDialogFragment"
+            app:destination="@id/previewMenuDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/previewMenuDialogFragment"
+        android:name="com.example.priceelist.invoice.PreviewMenuDialogFragment"
+        android:label=""
+        tools:layout="@layout/fragment_preview_menu_dialog" >
+        <argument
+            android:name="invoice_id"
+            app:argType="integer" />
+        <argument
+            android:name="file_name"
+            app:argType="string"
+            android:defaultValue=""/>
+        <action
+            android:id="@+id/action_previewMenuDialogFragment_to_previewFragment"
+            app:destination="@id/previewFragment" />
+        <action
+            android:id="@+id/action_previewMenuDialogFragment_to_invoicesListFragment"
+            app:destination="@id/invoicesListFragment"
+            app:popUpTo="@id/invoicesListFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_previewMenuDialogFragment_to_invoiceNewClientFragment"
+            app:destination="@id/invoiceNewClientFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/invoiceNewClientFragment"
+        android:name="com.example.priceelist.invoice.InvoiceNewClientFragment"
+        android:label=""
+        tools:layout="@layout/fragment_invoice_new_client" >
+        <argument
+            android:name="invoice_id"
+            app:argType="integer" />
+        <argument
+            android:name="list_type"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="client_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_invoiceNewClientFragment_to_invoicesListFragment"
+            app:destination="@id/invoicesListFragment"
+            app:popUpTo="@id/invoicesListFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_invoiceNewClientFragment_to_invoicePriceInfoFragment"
+            app:destination="@id/invoicePriceInfoFragment"
+            app:enterAnim="@anim/slide_in_faster"
+            app:exitAnim="@anim/fade_out"/>
+        <action
+            android:id="@+id/action_invoiceNewClientFragment_to_savedClientsMenuDialog"
+            app:destination="@id/savedClientsMenuDialog" />
+        <action
+            android:id="@+id/action_invoiceNewClientFragment_to_invoicesListFragment2"
+            app:destination="@id/invoicesListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shareDownloadListFragment"
+        android:name="com.example.priceelist.pricelist.ShareDownloadListFragment"
+        tools:layout="@layout/fragment_share_download_list">
+        <argument
+            android:name="list_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="share_or_download"
+            android:defaultValue=""
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_shareDownloadListFragment_to_savedListsFragment"
+            app:destination="@id/savedListsFragment"
+            app:popUpTo="@id/savedListsFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.example.priceelist.account.CreateAccountFragment"
+        android:label=""
+        tools:layout="@layout/fragment_create_account" >
+        <argument
+            android:name="destination"
+            android:defaultValue="To AccountFragment"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_createAccountFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:popUpTo="@id/accountFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/accountInformationFragment"
+        android:name="com.example.priceelist.account.AccountInformationFragment"
+        android:label=""
+        tools:layout="@layout/fragment_account_information" >
+        <argument
+            android:name="section"
+            android:defaultValue=""
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_accountInformationFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:popUpTo="@id/accountFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.priceelist.account.StatsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" >
+        <action
+            android:id="@+id/action_statsFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:popUpTo="@id/accountFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.priceelist.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+</navigation>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#04D8C3</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!--  Green Colors  -->
+    <color name="primary1">#00796B</color>          <!--700-->
+    <color name="primary2">#00695C</color>          <!--800-->
+    <color name="primary_2_dark">#009688</color>    <!--500-->
+    <color name="primary_1_dark">#26A69A</color>    <!--400-->
+    <color name="pry_1_dark_transparent">#8026A69A</color>
+    <color name="primary_50">#E0F2F1</color>        <!--50-->
+    <color name="primary_100">#B2DFDB</color>
+
+    <!--  Grey Colors  -->
+    <color name="gray_dark">#1C1C1C</color>         <!--900-->
+    <color name="gray_001">#6F6F6F</color>          <!--600-->
+    <!--    <color name="gray_001">#6A6A6A</color>  --> <!--Alternative (previously used)-->
+    <color name="gray_100">#F3F3F3</color>          <!--100-->
+    <color name="gray_400">#BDBDBD</color>
+
+    <!--Other colors-->
+    <color name="invoice_id_color">#005A96</color>  <!--900: for Dark mode-->
+    <color name="invoice_id_circle">#E0EAF2</color> <!--50: for dark mode-->
+    <color name="receipt_id_color">#00963C</color>  <!--700: for Dark mode-->
+    <color name="receipt_id_circle">#E0F2E8</color> <!--50: for dark mode-->
+    <color name="complimentary_1">#D32F2F</color>   <!--700-->
+    <color name="complimentary_red">#EF5350</color> <!--400-->
+    <color name="complimentary_blue_500">#2196F3</color>
+    <color name="complimentary_blue">#42A5F5</color><!--400-->
+    <color name="comp_blue_light_400">#26C6DA</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="canvas">#F8F9FA</color>
+    <color name="white_transparent">#B3FFFFFF</color>
+    <color name="primary_50_light">#E5B2DFDB</color>
+</resources>

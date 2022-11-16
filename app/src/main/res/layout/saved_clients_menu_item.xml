@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/between_lists"
+    android:paddingBottom="@dimen/margin">
+
+    <FrameLayout
+        android:id="@+id/client_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginEnd="@dimen/id_circle_margin"
+        android:layout_marginStart="@dimen/margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/id_circle_cl" />
+
+        <TextView
+            android:id="@+id/name_initial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="GA" />
+
+    </FrameLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/client_name"
+        android:layout_width="272dp"
+        android:layout_height="48dp"
+        android:layout_gravity="start"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="start|center_vertical"
+        android:textColor="@color/gray_dark"
+        android:textSize="14sp"
+        tools:text="Priceelist Incorporation" />
+
+</LinearLayout>

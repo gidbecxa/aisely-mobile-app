@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/coordinator_layout"
+    tools:context=".invoice.InvoiceNewClientFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_top"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryVariant"
+            android:elevation="2dp"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:contentDescription="@string/up_button"
+                android:focusable="true"
+                android:minWidth="28dp"
+                android:layout_gravity="center_vertical"
+                android:minHeight="28dp"
+                app:srcCompat="@drawable/ic_arrow_back"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/client_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/client_details"
+                android:textColor="@color/gray_dark"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                tools:layout_editor_absoluteX="48dp"
+                tools:layout_editor_absoluteY="11dp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="@dimen/margin">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/small_circle" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/next_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:contentDescription="@string/next"
+                    android:focusable="true"
+                    android:minWidth="28dp"
+                    android:minHeight="28dp"
+                    app:srcCompat="@drawable/ic_navigate_next"
+                    android:tint="@color/primary1"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </FrameLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_top">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/client_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin"
+                    android:importantForAccessibility="no"
+                    android:minWidth="28dp"
+                    android:minHeight="28dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/client_name_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/client_name_layout"
+                    app:srcCompat="@drawable/ic_person"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/client_name_layout"
+                    style="@style/Widget.Priceelist.Client.TextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/list_item_spacing"
+                    android:layout_marginTop="@dimen/client_form_margin"
+                    android:layout_marginEnd="@dimen/client_form_mg_end"
+                    android:hint="@string/client_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/client_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:hintTextColor="@color/primary1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/client_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_vertical"
+                        android:inputType="textAutoComplete|textAutoCorrect|textCapWords|text"
+                        android:maxLength="@integer/name"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/contact_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin"
+                    android:importantForAccessibility="no"
+                    android:minWidth="28dp"
+                    android:minHeight="28dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/client_phone_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/client_phone_layout"
+                    app:srcCompat="@drawable/ic_phone"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/client_phone_layout"
+                    style="@style/Widget.Priceelist.Client.TextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/list_item_spacing"
+                    android:layout_marginTop="@dimen/margin"
+                    android:layout_marginEnd="@dimen/client_form_mg_end"
+                    android:hint="@string/phone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/client_icon"
+                    app:layout_constraintTop_toBottomOf="@id/client_name_layout"
+                    app:hintTextColor="@color/primary1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/client_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_vertical"
+                        android:inputType="phone"
+                        android:maxLength="@integer/phone"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/mail_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin"
+                    android:importantForAccessibility="no"
+                    android:minWidth="28dp"
+                    android:minHeight="28dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/client_email_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/client_email_layout"
+                    app:srcCompat="@drawable/ic_email"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/client_email_layout"
+                    style="@style/Widget.Priceelist.Client.TextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/list_item_spacing"
+                    android:layout_marginTop="@dimen/margin"
+                    android:layout_marginEnd="@dimen/client_form_mg_end"
+                    android:hint="@string/email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/mail_icon"
+                    app:layout_constraintTop_toBottomOf="@id/client_phone_layout"
+                    app:hintTextColor="@color/primary1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/client_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_vertical"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="@integer/email_max_length"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/address_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin"
+                    android:importantForAccessibility="no"
+                    android:minWidth="28dp"
+                    android:minHeight="28dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/client_address_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/client_address_layout"
+                    app:srcCompat="@drawable/ic_location"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/client_address_layout"
+                    style="@style/Widget.Priceelist.Client.TextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/list_item_spacing"
+                    android:layout_marginTop="@dimen/margin"
+                    android:layout_marginEnd="@dimen/client_form_mg_end"
+                    android:hint="@string/address"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/address_icon"
+                    app:layout_constraintTop_toBottomOf="@id/client_email_layout"
+                    app:hintTextColor="@color/primary1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/client_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:inputType="textMultiLine|text|textAutoComplete|textCapWords"
+                        android:maxLength="@integer/address"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center_vertical"
+                    android:text="@string/choose_saved_client"
+                    android:textColor="@color/primary2"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/client_address_layout"
+                    app:layout_constraintTop_toBottomOf="@id/client_address_layout"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

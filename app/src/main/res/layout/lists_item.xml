@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:paddingTop="@dimen/margin"
+    android:paddingBottom="@dimen/list_item_spacing">
+
+    <FrameLayout
+        android:id="@+id/id_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/id_circle_pl" />
+
+        <TextView
+            android:id="@+id/list_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="Pl" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/main_frame"
+        android:layout_width="244dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/id_frame"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/gray_dark"
+            android:textSize="14sp"
+            tools:text="Priceelist 14082021" />
+
+        <TextView
+            android:id="@+id/list_total"
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/gray_dark"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$9,999,999,999.99" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+
+            <!--<TextView
+                android:id="@+id/date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="@string/created"
+                android:textColor="@color/gray_001"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/invoice_number"
+                app:layout_constraintTop_toBottomOf="@id/invoice_number" />-->
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/between_lists"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/gray_001"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/date_title"
+                app:layout_constraintTop_toBottomOf="@id/invoice_number"
+                tools:text="Aug 13, 2021" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

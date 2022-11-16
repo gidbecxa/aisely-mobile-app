@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pricelist.ShareDownloadListFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_top"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="?attr/colorPrimaryVariant"
+        android:backgroundTint="@color/canvas"
+        android:elevation="0dp"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/preview_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:contentDescription="@string/up_button"
+            android:focusable="true"
+            android:minWidth="28dp"
+            android:minHeight="28dp"
+            app:srcCompat="@drawable/ic_arrow_back"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/preview"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="11dp" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/preview_fragment_layout"
+        android:layout_width="800dp"
+        android:layout_height="1280dp"
+        android:background="@drawable/list_background_2"
+        android:paddingStart="@dimen/margin"
+        android:paddingTop="0dp"
+        android:paddingEnd="@dimen/margin"
+        android:paddingBottom="@dimen/margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_top"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Shopping list 08102021" />
+
+        <TextView
+            android:id="@+id/item_description"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="88dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:text="@string/list_item_hint"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/unit_price"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/amount_hint"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/item_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginEnd="64dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/unit_price"
+            app:layout_constraintEnd_toEndOf="@id/unit_price"
+            tools:text="$" />
+
+
+        <TextView
+            android:id="@+id/qty"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:text="@string/unit_hint"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/item_description"
+            app:layout_constraintEnd_toStartOf="@+id/unit_price"
+            app:layout_constraintStart_toEndOf="@+id/item_description"
+            tools:ignore="SmallSp" />
+
+        <View
+            android:id="@+id/divider_header"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/gray_001"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_description" />
+
+        <TextView
+            android:id="@+id/item_1"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_header"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_1"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_header"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_1"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_1"
+            app:layout_constraintStart_toEndOf="@+id/item_1"
+            app:layout_constraintTop_toBottomOf="@id/divider_header"
+            tools:ignore="SmallSp"
+            tools:text="2500000" />
+
+        <TextView
+            android:id="@+id/item_2"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_1"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_2"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_1"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_2"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_2"
+            app:layout_constraintStart_toEndOf="@+id/item_2"
+            app:layout_constraintTop_toBottomOf="@id/unit_1"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_3"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_2"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_3"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_2"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_3"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_3"
+            app:layout_constraintStart_toEndOf="@+id/item_3"
+            app:layout_constraintTop_toBottomOf="@id/unit_2"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_4"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_3"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_4"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_3"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_4"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_4"
+            app:layout_constraintStart_toEndOf="@+id/item_4"
+            app:layout_constraintTop_toBottomOf="@id/unit_3"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_5"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_4"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_5"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_4"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_5"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_5"
+            app:layout_constraintStart_toEndOf="@+id/item_5"
+            app:layout_constraintTop_toBottomOf="@id/unit_4"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_6"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_5"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_6"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_5"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_6"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_6"
+            app:layout_constraintStart_toEndOf="@+id/item_6"
+            app:layout_constraintTop_toBottomOf="@id/unit_5"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_7"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_6"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_7"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_6"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_7"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_7"
+            app:layout_constraintStart_toEndOf="@+id/item_7"
+            app:layout_constraintTop_toBottomOf="@id/unit_6"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_8"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_7"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_8"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_7"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_8"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_8"
+            app:layout_constraintStart_toEndOf="@+id/item_8"
+            app:layout_constraintTop_toBottomOf="@id/unit_7"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_9"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_8"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_9"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_8"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_9"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_9"
+            app:layout_constraintStart_toEndOf="@+id/item_9"
+            app:layout_constraintTop_toBottomOf="@id/unit_8"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_10"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_9"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_10"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_9"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_10"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_10"
+            app:layout_constraintStart_toEndOf="@+id/item_10"
+            app:layout_constraintTop_toBottomOf="@id/unit_9"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_11"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_10"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_11"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_10"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_11"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_11"
+            app:layout_constraintStart_toEndOf="@+id/item_11"
+            app:layout_constraintTop_toBottomOf="@id/unit_10"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_12"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_11"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_12"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_11"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_12"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_12"
+            app:layout_constraintStart_toEndOf="@+id/item_12"
+            app:layout_constraintTop_toBottomOf="@id/unit_11"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_13"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_12"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_13"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_12"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_13"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_13"
+            app:layout_constraintStart_toEndOf="@+id/item_13"
+            app:layout_constraintTop_toBottomOf="@id/unit_12"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_14"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_13"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_14"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_13"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_14"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_14"
+            app:layout_constraintStart_toEndOf="@+id/item_14"
+            app:layout_constraintTop_toBottomOf="@id/unit_13"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <TextView
+            android:id="@+id/item_15"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_14"
+            tools:text="Goods" />
+
+        <TextView
+            android:id="@+id/amount_15"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amount_14"
+            tools:ignore="SmallSp"
+            tools:text="12,500" />
+
+        <TextView
+            android:id="@+id/unit_15"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/amount_15"
+            app:layout_constraintStart_toEndOf="@+id/item_15"
+            app:layout_constraintTop_toBottomOf="@id/unit_14"
+            tools:ignore="SmallSp"
+            tools:text="250" />
+
+        <FrameLayout
+            android:id="@+id/footer_frame"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_15">
+
+            <View
+                android:id="@+id/divider_footer"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="top"
+                android:background="@color/gray_001"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="4dp" />
+
+            <View
+                android:id="@+id/divider_footer_2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom"
+                android:background="@color/gray_001"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="4dp" />
+
+            <TextView
+                android:id="@+id/total_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:text="@string/total_button"
+                android:textAllCaps="true"
+                android:textColor="@color/gray_dark"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center|end"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/gray_dark"
+                android:textSize="24sp"
+                tools:text="$12,500,500,500.00" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/footer_frame"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_medium"
+            tools:text="NB: Items here listed should be any of my preferred brands."
+            android:layout_marginTop="@dimen/client_form_margin"
+            android:layout_marginStart="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:tint="@color/canvas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_top"
+        app:srcCompat="@drawable/canvas_background"
+        tools:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/bottom_frame"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/preview_footer"
+        android:backgroundTint="@color/white"
+        android:paddingStart="16dp"
+        android:paddingTop="2dp"
+        android:elevation="8dp"
+        android:translationZ="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/share_download_button"
+            style="@style/Widget.Priceelist.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/download"
+            android:textSize="14sp"/>
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/loading_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/loading"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/loading_preview"
+        tools:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/image_preview_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/client_form_margin"
+        android:background="@drawable/canvas_background"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottom_frame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_top"
+        tools:visibility="visible">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/preview"
+            android:scaleType="fitCenter"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="4dp"
+            tools:srcCompat="@drawable/new_list_sample"
+            tools:visibility="visible"/>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

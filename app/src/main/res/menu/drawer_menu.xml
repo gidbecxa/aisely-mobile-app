@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/top_three"
+        android:orderInCategory="@integer/order_1">
+
+        <item
+            android:id="@+id/savedListsFragment"
+            android:icon="@drawable/ic_menu_pricelist"
+            android:title="@string/menu_pricelist"
+            android:orderInCategory="@integer/order_1"/>
+
+        <item
+            android:id="@+id/invoicesListFragment"
+            android:icon="@drawable/ic_menu_invoice"
+            android:title="@string/menu_invoice"
+            android:orderInCategory="@integer/order_2"/>
+
+        <item
+            android:id="@+id/receiptsListFragment"
+            android:icon="@drawable/ic_menu_receipt"
+            android:title="@string/menu_receipt"
+            android:orderInCategory="@integer/order_3"/>
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/account_info"
+        android:orderInCategory="@integer/order_2">
+
+        <item
+            android:id="@+id/accountFragment"
+            android:icon="@drawable/ic_account"
+            android:title="@string/menu_account"
+            android:orderInCategory="@integer/order_4"/>
+
+        <item
+            android:id="@+id/clientsListFragment"
+            android:icon="@drawable/ic_manage_clients"
+            android:title="@string/manage_clients"
+            android:orderInCategory="@integer/order_5"/>
+    </group>
+
+    <group android:id="@+id/others"
+        android:checkableBehavior="single"
+        android:orderInCategory="@integer/order_3">
+
+        <item android:id="@+id/helpFragment"
+            android:title="@string/help_support"
+            android:orderInCategory="@integer/order_6"
+            android:icon="@drawable/ic_help"/>
+    </group>
+
+</menu>

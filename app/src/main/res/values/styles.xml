@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Widget.Priceelist.TextInputLayout.Title" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:minHeight">32dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:inputType">textAutoComplete|textAutoCorrect|textCapSentences|text|textShortMessage</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:hint">@string/title</item>
+        <item name="boxStrokeColor">@color/primary1</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="boxCornerRadiusTopStart">@dimen/box_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/box_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/box_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/box_corner_radius</item>
+        <item name="hintTextColor">@color/gray_001</item>
+    </style>
+
+    <style name="Widget.Priceelist.TextView.Title2" parent="Widget.MaterialComponents.TextView">
+        <item name="android:minHeight">32dp</item>
+        <item name="android:gravity">start|bottom</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/primary1</item>
+    </style>
+
+    <style name="Widget.Priceelist.TextInput.Serial" parent="Widget.MaterialComponents.TextView">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+    <style name="Widget.Priceelist.TextInput.Items2" parent="Widget.MaterialComponents.TextView">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_width">168dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColorHint">@color/gray_001</item>
+        <item name="android:importantForAccessibility">no</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">12sp</item>
+        <item name="paddingStart">0dp</item>
+        <item name="paddingEnd">2dp</item>
+    </style>
+
+    <style name="Widget.Priceelist.TextInput.Amounts2" parent="Widget.MaterialComponents.TextView">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_width">84dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:textColorHint">@color/gray_001</item>
+        <item name="android:importantForAccessibility">no</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">12sp</item>
+        <item name="paddingStart">0dp</item>
+        <item name="paddingEnd">2dp</item>
+    </style>
+
+    <style name="Widget.Priceelist.TextInput.Units2" parent="Widget.MaterialComponents.TextView">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColorHint">@color/gray_001</item>
+        <item name="android:importantForAccessibility">no</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">12sp</item>
+        <item name="paddingStart">0dp</item>
+        <item name="paddingEnd">2dp</item>
+    </style>
+
+    <style name="Widget.Priceelist.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:buttonCornerRadius" tools:targetApi="p">12dp</item>
+    </style>
+
+    <style name="TextAppearance.Priceelist" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="Widget.Priceelist.Client.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:minHeight">24dp</item>
+        <item name="android:padding">1dp</item>
+        <item name="boxStrokeColor">@color/primary1</item>
+        <item name="boxCornerRadiusTopStart">@dimen/client_box_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/client_box_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/client_box_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/client_box_corner_radius</item>
+        <item name="hintTextColor">@color/gray_001</item>
+        <item name="helperTextTextColor">@color/gray_001</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.Priceelist</item>
+    </style>
+
+    <style name="Widget.Priceelist.Note.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:minHeight">32dp</item>
+        <item name="android:padding">1dp</item>
+        <item name="boxStrokeColor">@color/primary1</item>
+        <item name="boxCornerRadiusTopStart">@dimen/note_box_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/note_box_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/client_box_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/client_box_corner_radius</item>
+        <item name="hintTextColor">@color/gray_001</item>
+        <item name="helperTextTextColor">@color/gray_001</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.Priceelist</item>
+        <item name="boxCollapsedPaddingTop">8dp</item>
+        <item name="boxBackgroundColor">@color/gray_100</item>
+    </style>
+
+    <style name="Widget.Priceelist.TextInputLayout.DropDown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:minHeight">24dp</item>
+        <item name="android:padding">1dp</item>
+        <item name="boxStrokeColor">@color/primary1</item>
+        <item name="boxCornerRadiusTopStart">@dimen/client_box_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/client_box_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/client_box_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/client_box_corner_radius</item>
+        <item name="android:textColorHint">@color/gray_001</item>
+        <item name="hintTextColor">@color/primary1</item>
+        <item name="helperTextTextColor">@color/gray_001</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.Priceelist</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.TextView.Priceelist" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.TextView2.Priceelist" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:gravity">end|center_vertical</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+</resources>

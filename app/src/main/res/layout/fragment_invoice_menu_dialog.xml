@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/coordinator_layout"
+    tools:context=".invoice.InvoiceMenuDialogFragment">
+
+    <LinearLayout
+        android:id="@+id/menu_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/margin"
+        android:paddingTop="@dimen/margin"
+        android:paddingEnd="@dimen/margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/title_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/menu_invoice_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="start|center_vertical"
+                android:tint="@color/primary1"
+                tools:srcCompat="@drawable/ic_menu_invoice" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/menu_title"
+                android:layout_width="168dp"
+                android:layout_height="48dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginStart="52dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray_dark"
+                android:textSize="16sp"
+                tools:text="Priceelist 21082021" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                tools:text="Invoice"
+                android:textColor="@color/gray_001"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="52dp"
+                android:textAllCaps="false"
+                tools:ignore="SmallSp" />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/divide_header1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_400"
+            app:layout_constraintTop_toBottomOf="@id/title_frame" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_edit_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bottom_sheet_1"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/menu_edit_text"
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/list_item_spacing"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical|start"
+                tools:text="@string/edit_invoice"
+                android:textColor="@color/gray_dark"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/menu_edit_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/menu_edit_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:tint="@color/primary1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <View
+                android:id="@+id/divider01"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_send_new"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bottom_sheet_2"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/menu_send_new_text"
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/list_item_spacing"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical|start"
+                android:text="@string/invoice_menu_send_new"
+                android:textColor="@color/gray_dark"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/menu_send_new_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/menu_send_new_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:tint="@color/primary1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_send_new" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_make_receipt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bottom_sheet_2"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/menu_make_receipt_text"
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/list_item_spacing"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical|start"
+                android:text="@string/menu_make_receipt"
+                android:textColor="@color/gray_dark"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/menu_make_receipt_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/menu_make_receipt_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:tint="@color/primary1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu_receipt" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bottom_sheet_2"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/menu_send_text"
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/list_item_spacing"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical|start"
+                tools:text="@string/invoice_menu_send"
+                android:textColor="@color/gray_dark"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/menu_send_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/menu_send_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:tint="@color/primary1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu_send" />
+
+            <View
+                android:id="@+id/divider04"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bottom_sheet_2"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menu_delete_invoice">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/menu_download_text"
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/list_item_spacing"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical|start"
+                android:text="@string/invoice_menu_download"
+                android:textColor="@color/gray_dark"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/menu_download_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/menu_download_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:tint="@color/primary1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_download" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_clear_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bottom_sheet_2"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menu_delete_invoice">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/menu_clear_invoice_text"
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/list_item_spacing"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical|start"
+                android:text="@string/invoice_menu_clear"
+                android:textColor="@color/gray_dark"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/menu_clear_invoice_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/menu_clear_invoice_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:tint="@color/primary1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_check_clear" />
+
+            <View
+                android:id="@+id/divider33"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_delete_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bottom_sheet_2"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/menu_delete_invoice_text"
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/list_item_spacing"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical|start"
+                tools:text="@string/invoice_menu_delete"
+                android:textColor="@color/gray_dark"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/menu_delete_invoice_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/menu_delete_invoice_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:tint="@color/primary1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_trash" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

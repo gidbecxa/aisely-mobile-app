@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".account.AccountInformationFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_top"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryVariant"
+            android:elevation="2dp"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:contentDescription="@string/up_button"
+                android:focusable="true"
+                android:minWidth="28dp"
+                android:minHeight="28dp"
+                app:srcCompat="@drawable/ic_arrow_back"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/business_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/account_information"
+                android:textColor="@color/gray_dark"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="48dp"
+                tools:layout_editor_absoluteY="11dp" />
+
+            <TextView
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="@dimen/margin"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="@dimen/margin"
+                android:text="@string/save"
+                android:textColor="@color/primary1"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="343dp"
+                tools:layout_editor_absoluteY="9dp"
+                android:visibility="gone"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_top">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/basic_info_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/basic_information"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/basic_information"
+                        android:textAllCaps="false"
+                        android:textColor="@color/gray_dark"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/business_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:importantForAccessibility="no"
+                        android:minWidth="24dp"
+                        android:minHeight="24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_name_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/business_name_title"
+                        app:srcCompat="@drawable/ic_business"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/business_name_title"
+                        style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginEnd="@dimen/client_form_mg_end"
+                        android:text="@string/business_name_2"
+                        app:layout_constraintStart_toEndOf="@+id/business_icon"
+                        app:layout_constraintTop_toBottomOf="@id/basic_information"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business_name"
+                        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:text="Gideon Adejare"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_name_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/business_name_title" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/category_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:importantForAccessibility="no"
+                        android:minWidth="24dp"
+                        android:minHeight="24dp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_category_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/business_category_title"
+                        app:srcCompat="@drawable/ic_business_category"
+                        tools:ignore="TouchTargetSizeCheck"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/business_category_title"
+                        style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:layout_marginEnd="@dimen/client_form_mg_end"
+                        android:text="@string/business_category"
+                        app:layout_constraintStart_toEndOf="@+id/category_icon"
+                        app:layout_constraintTop_toBottomOf="@id/business_name_title"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business_category"
+                        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/margin"
+                        android:text="Mobile Development"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_category_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/business_category_title" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/contact_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:importantForAccessibility="no"
+                        android:minWidth="24dp"
+                        android:minHeight="24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_phone_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/business_phone_title"
+                        app:srcCompat="@drawable/ic_phone"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <ImageView
+                        android:id="@+id/add_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:contentDescription="@string/add_another_phone_number"
+                        android:minWidth="28dp"
+                        android:minHeight="28dp"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        app:layout_constraintStart_toStartOf="@id/business_phone_title"
+                        app:layout_constraintTop_toBottomOf="@+id/business_phone_title"
+                        app:srcCompat="@drawable/ic_add_circle"
+                        tools:ignore="TouchTargetSizeCheck"
+                        app:tint="@color/primary1"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/add_another"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="24dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="@string/add_another"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/primary1"
+                        android:textSize="10sp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toEndOf="@id/add_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/business_phone_title"
+                        tools:ignore="SmallSp"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/business_phone_title"
+                        style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:layout_marginEnd="@dimen/client_form_mg_end"
+                        android:text="@string/business_phone_title"
+                        app:layout_constraintStart_toEndOf="@+id/contact_icon"
+                        app:layout_constraintTop_toBottomOf="@id/business_category_title"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business_phone"
+                        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/margin"
+                        android:text="+234 815 411 3395"
+                        android:inputType="phone"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_phone_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/business_phone_title" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business_phone2"
+                        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:layout_marginBottom="@dimen/margin_2"
+                        android:hint="@string/phone2"
+                        android:inputType="phone"
+                        app:layout_constraintBottom_toTopOf="@+id/business_email_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/business_phone_title"
+                        app:layout_constraintTop_toBottomOf="@id/business_phone"
+                        tools:visibility="visible" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/mail_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:importantForAccessibility="no"
+                        android:minWidth="24dp"
+                        android:minHeight="24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_email_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/business_email_title"
+                        app:srcCompat="@drawable/ic_email"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/business_email_title"
+                        style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/business_email"
+                        app:layout_constraintStart_toEndOf="@+id/mail_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/add_another" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business_email"
+                        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/margin"
+                        android:text="gidbec4yeshua@gmail.com"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_email_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/business_email_title" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/address_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:importantForAccessibility="no"
+                        android:minWidth="24dp"
+                        android:minHeight="24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_address_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/business_address_title"
+                        app:srcCompat="@drawable/ic_location"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/business_address_title"
+                        style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:layout_marginEnd="@dimen/client_form_mg_end"
+                        android:text="@string/business_address"
+                        app:layout_constraintStart_toEndOf="@+id/address_icon"
+                        app:layout_constraintTop_toBottomOf="@id/business_email_title"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business_address"
+                        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:inputType="textMultiLine"
+                        android:text="Mountain View, Silicon Valley, CA, United States"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/business_address_title"
+                        app:layout_constraintTop_toBottomOf="@+id/business_email" />
+
+                    <View
+                        android:id="@+id/divider18"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_001"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="@+id/business_phone2"
+                        app:layout_constraintStart_toStartOf="@+id/business_phone2"
+                        app:layout_constraintBottom_toBottomOf="@+id/business_phone2"
+                        tools:layout_editor_absoluteY="233dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/payment_info_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    app:layout_constraintTop_toBottomOf="@id/basic_info_section">
+
+                    <TextView
+                        android:id="@+id/payment_information"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/payment_information"
+                        android:textAllCaps="false"
+                        android:textColor="@color/gray_dark"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/institution_name_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:importantForAccessibility="no"
+                        android:minWidth="24dp"
+                        android:minHeight="24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/institution_name_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/institution_name_title"
+                        app:srcCompat="@drawable/ic_institution"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/institution_name_title"
+                        style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:layout_marginEnd="@dimen/client_form_mg_end"
+                        android:text="@string/institution_name"
+                        app:layout_constraintStart_toEndOf="@+id/institution_name_icon"
+                        app:layout_constraintTop_toBottomOf="@id/payment_information"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/institution_name"
+                        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/margin"
+                        android:text="Ecobank Plc."
+                        app:layout_constraintBottom_toBottomOf="@+id/institution_name_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/institution_name_title" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/payment_name_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:importantForAccessibility="no"
+                        android:minWidth="24dp"
+                        android:minHeight="24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/payment_name_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/payment_name_title"
+                        app:srcCompat="@drawable/ic_user_settings"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/payment_name_title"
+                        style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:layout_marginEnd="@dimen/client_form_mg_end"
+                        android:text="@string/payment_name_info"
+                        app:layout_constraintStart_toEndOf="@+id/payment_name_icon"
+                        app:layout_constraintTop_toBottomOf="@id/institution_name_title"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/payment_name"
+                        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/margin"
+                        android:text="Oni-Becsen Gideon Adejare"
+                        app:layout_constraintBottom_toBottomOf="@+id/payment_name_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/payment_name_title" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/payment_id_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin"
+                        android:importantForAccessibility="no"
+                        android:minWidth="24dp"
+                        android:minHeight="24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/payment_id_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/payment_id_title"
+                        app:srcCompat="@drawable/ic_credit_card"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/payment_id_title"
+                        style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:layout_marginEnd="@dimen/client_form_mg_end"
+                        android:text="@string/account_no"
+                        app:layout_constraintStart_toEndOf="@+id/payment_id_icon"
+                        app:layout_constraintTop_toBottomOf="@id/payment_name_title"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/payment_id"
+                        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Priceelist"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/margin"
+                        android:text="0990007987"
+                        app:layout_constraintBottom_toBottomOf="@+id/payment_id_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/payment_id_title" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

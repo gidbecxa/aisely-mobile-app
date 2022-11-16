@@ -1,0 +1,130 @@
+<TextView
+                    android:id="@+id/receipt_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/menu_receipt"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider" />
+
+                <TextView
+                    android:id="@+id/receipts_created_title"
+                    style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin"
+                    android:text="@string/no_created"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/receipt_subtitle" />
+
+                <TextView
+                    android:id="@+id/receipts_created"
+                    style="@style/Widget.MaterialComponents.TextView2.Priceelist"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/margin_2"
+                    android:text="@string/stats_2000"
+                    app:layout_constraintBottom_toBottomOf="@+id/receipts_created_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/receipts_created_title" />
+                
+                <TextView
+                    android:id="@+id/receipts_sent_title"
+                    style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:text="@string/no_sent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/receipts_created_title" />
+
+                <TextView
+                    android:id="@+id/receipts_sent"
+                    style="@style/Widget.MaterialComponents.TextView2.Priceelist"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/margin"
+                    android:text="@string/stats_2000"
+                    app:layout_constraintBottom_toBottomOf="@+id/receipts_sent_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/receipts_sent_title" />
+
+                <TextView
+                    android:id="@+id/receipts_cleared_title"
+                    style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:text="@string/no_cleared"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/receipts_sent_title" />
+
+                <TextView
+                    android:id="@+id/receipts_cleared"
+                    style="@style/Widget.MaterialComponents.TextView2.Priceelist"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/margin"
+                    android:text="@string/stats_2000"
+                    app:layout_constraintBottom_toBottomOf="@+id/receipts_cleared_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/receipts_cleared_title" />
+
+                <TextView
+                    android:id="@+id/rcp_amount_sent_title"
+                    style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:text="@string/total_amount_sent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/receipts_cleared_title" />
+
+                <TextView
+                    android:id="@+id/rcp_amount_sent"
+                    style="@style/Widget.MaterialComponents.TextView2.Priceelist"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/margin"
+                    android:text="@string/stats_200_000"
+                    app:layout_constraintBottom_toBottomOf="@+id/rcp_amount_sent_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rcp_amount_sent_title" />
+
+                <TextView
+                    android:id="@+id/rcp_amount_cleared_title"
+                    style="@style/Widget.MaterialComponents.TextView.Priceelist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:text="@string/total_amount_cleared"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rcp_amount_sent_title" />
+
+                <TextView
+                    android:id="@+id/rcp_amount_cleared"
+                    style="@style/Widget.MaterialComponents.TextView2.Priceelist"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:text="@string/stats_200_000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rcp_amount_cleared_title"
+                    app:layout_constraintTop_toBottomOf="@+id/rcp_amount_sent" />
+
+                <View
+                    android:id="@+id/divider18"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_400"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rcp_amount_cleared_title"
+                    tools:layout_editor_absoluteY="233dp" />

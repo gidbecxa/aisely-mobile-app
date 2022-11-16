@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="business_category_array">
+        <item>Advertising/Marketing</item>
+        <item>Amateur Sports Team</item>
+        <item>Appliance Repair/Maintenance Service</item>
+        <item>Art</item>
+        <item>Arts &amp;amp; Entertainment</item>
+        <item>Automotive Repair Shop</item>
+        <item>Baby &amp; Children’s Clothing Store</item>
+        <item>Baby Goods/Kids Goods</item>
+        <item>Banking</item>
+        <item>Bar</item>
+        <item>Beauty, Cosmetic &amp; Personal Care</item>
+        <item>Beauty Salon &amp; Spa</item>
+        <item>Bookshop/Bookstore</item>
+        <item>Building &amp; Construction</item>
+        <item>Business Center</item>
+        <item>Business Service</item>
+        <item>Christian Organisation</item>
+        <item>Clothing (Brand)</item>
+        <item>Clothing Store</item>
+        <item>College &amp; University</item>
+        <item>Commercial &amp; Industrial</item>
+        <item>Commercial Bank</item>
+        <item>Commercial Equipment</item>
+        <item>Community Organization</item>
+        <item>Consulting Agency</item>
+        <item>Consumer Electronics</item>
+        <item>Content Creator</item>
+        <item>Contractor</item>
+        <item>Convenience Store</item>
+        <item>Credit Union</item>
+        <item>Dance/Choreography</item>
+        <item>Design</item>
+        <item>E-commerce</item>
+        <item>Education</item>
+        <item>Engineering Service</item>
+        <item>Entertainment</item>
+        <item>Entrepreneurship</item>
+        <item>Event Planning &amp; Management</item>
+        <item>Fashion Design</item>
+        <item>Fashion Model</item>
+        <item>Fashion Store</item>
+        <item>Fast Food Restaurant</item>
+        <item>Financial Service</item>
+        <item>Food &amp; Beverage</item>
+        <item>Government Organization</item>
+        <item>Graphic &amp; Digital Design</item>
+        <item>Grocery Store</item>
+        <item>Health/Beauty</item>
+        <item>Heating, Ventilating &amp; Air Conditioning Service</item>
+        <item>Home Decor</item>
+        <item>Hospital &amp; Health Care</item>
+        <item>Hotel &amp; Lodging</item>
+        <item>In-Home Service</item>
+        <item>Industrial Company</item>
+        <item>Information Technology Company</item>
+        <item>Insurance Company</item>
+        <item>Internet Company</item>
+        <item>Internet Marketing Service</item>
+        <item>Jewelry &amp; Watches Company</item>
+        <item>Journalism</item>
+        <item>Kitchen/Cooking</item>
+        <item>Lawyer &amp; Law Firm</item>
+        <item>Library</item>
+        <item>Loan Service</item>
+        <item>Local Service</item>
+        <item>Marketing Agency</item>
+        <item>Media</item>
+        <item>Media/News Company</item>
+        <item>Mobile Development</item>
+        <item>Movie</item>
+        <item>Musician/Band</item>
+        <item>News &amp; Media Website</item>
+        <item>Nonprofit Organization</item>
+        <item>Non-Governmental Organization (NGO)</item>
+        <item>Office Supplies</item>
+        <item>Other</item>
+        <item>Outdoor &amp; Sporting Goods Company</item>
+        <item>Personal Blog</item>
+        <item>Photography/Videography</item>
+        <item>Product/Service</item>
+        <item>Public &amp; Government Service</item>
+        <item>Public Figure</item>
+        <item>Public Utility Company</item>
+        <item>Real Estate Agency</item>
+        <item>Real Estate Developer</item>
+        <item>Record Label</item>
+        <item>Religious Organization</item>
+        <item>Restaurant Service</item>
+        <item>School</item>
+        <item>Science, Technology &amp; Engineering</item>
+        <item>Shopping &amp; Retail</item>
+        <item>Sports &amp; Recreation</item>
+        <item>Teens &amp; Kids Website</item>
+        <item>Telemarketing Service</item>
+        <item>Tutor/Teacher</item>
+        <item>TV Channel</item>
+        <item>University &amp; Tertiary</item>
+        <item>Veterinary</item>
+        <item>Video &amp; Game Creator</item>
+        <item>Web Design &amp; Development</item>
+        <item>Women’s Clothing Store</item>
+        <item>Writer</item>
+    </string-array>
+</resources>

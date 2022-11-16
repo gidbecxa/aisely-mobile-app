@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/margin"
+    android:paddingTop="@dimen/margin"
+    android:paddingEnd="@dimen/margin"
+    tools:context=".sharedfragment.SavedClientsMenuDialog">
+
+    <View
+        android:id="@+id/divider001"
+        android:layout_width="60dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="@dimen/bottom_sheet_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/divider"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/list_item_spacing_half"
+        android:paddingBottom="@dimen/list_item_spacing_half"
+        tools:listitem="@layout/saved_clients_menu_item"
+        app:layout_constraintTop_toBottomOf="@id/divider001"/>
+
+    <TextView
+        android:id="@+id/handler_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/please_wait"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp"
+        android:background="@color/white"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

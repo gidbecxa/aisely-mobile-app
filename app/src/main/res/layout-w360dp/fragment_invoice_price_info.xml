@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".invoice.InvoicePriceInfoFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_top"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryVariant"
+        android:elevation="0dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="@string/up_button"
+            android:focusable="true"
+            android:minWidth="28dp"
+            android:minHeight="28dp"
+            app:srcCompat="@drawable/ic_arrow_back"
+            android:layout_marginEnd="8dp"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/app_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/invoice_details"
+            android:textColor="@color/gray_dark"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="11dp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/margin">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/small_circle" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/next_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:contentDescription="@string/next"
+                android:focusable="true"
+                android:minWidth="28dp"
+                android:minHeight="28dp"
+                app:srcCompat="@drawable/ic_navigate_next"
+                android:tint="@color/primary1"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </FrameLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryVariant"
+        android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_top"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/toolbar_bottom">
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top"
+            android:layout_marginEnd="@dimen/margin"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="end|bottom"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$ 12 999 999,00" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/total_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/total_button"
+            android:layout_gravity="top"
+            android:textSize="14sp"
+            style="@style/Widget.Priceelist.Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_bottom"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/client_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin"
+                    android:tint="@color/primary1"
+                    app:srcCompat="@drawable/ic_arrow" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/client_name"
+                    style="@style/Widget.Priceelist.TextView.Title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    app:layout_constraintStart_toStartOf="@id/item1"
+                    app:layout_constraintTop_toBottomOf="@id/client_info"
+                    tools:text="Priceelist Inc." />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/price_details_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                app:layout_constraintTop_toBottomOf="@id/client_info">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/circle_frame"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="@dimen/between_lists"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/small_circle"
+                    app:tint="@color/primary1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="1"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/circle_frame"
+                    app:layout_constraintEnd_toEndOf="@+id/circle_frame"
+                    app:layout_constraintStart_toStartOf="@+id/circle_frame"
+                    app:layout_constraintTop_toTopOf="@+id/circle_frame"
+                    tools:layout_editor_absoluteY="2dp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/price_details"
+                    android:textColor="@color/primary1"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/circle_frame"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/list_item_column"
+                style="@style/Widget.Priceelist.TextView.Title2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="@string/item_description"
+                app:layout_constraintEnd_toEndOf="@+id/item1"
+                app:layout_constraintStart_toStartOf="@id/item1"
+                app:layout_constraintTop_toBottomOf="@id/price_details_header" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/qty_column"
+                style="@style/Widget.Priceelist.TextView.Title2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="@string/unit_hint"
+                app:layout_constraintEnd_toStartOf="@id/price_column"
+                app:layout_constraintStart_toEndOf="@id/list_item_column"
+                app:layout_constraintTop_toBottomOf="@id/price_details_header" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/price_column"
+                style="@style/Widget.Priceelist.TextView.Title2"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="@string/amount_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_details_header" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/list_item_column" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn1"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn1"
+                app:layout_constraintBottom_toBottomOf="@id/item1"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn2"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn2"
+                app:layout_constraintBottom_toBottomOf="@id/item2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn3"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn3"
+                app:layout_constraintBottom_toBottomOf="@id/item3"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn4"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn4"
+                app:layout_constraintBottom_toBottomOf="@id/item4"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn5"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn5"
+                app:layout_constraintBottom_toBottomOf="@id/item5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn6"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn6"
+                app:layout_constraintBottom_toBottomOf="@id/item6"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn7"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn7"
+                app:layout_constraintBottom_toBottomOf="@id/item7"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn8"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn8"
+                app:layout_constraintBottom_toBottomOf="@id/item8"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn9"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn9"
+                app:layout_constraintBottom_toBottomOf="@id/item9"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sn10"
+                style="@style/Widget.Priceelist.TextInput.Serial"
+                android:text="@string/sn10"
+                app:layout_constraintBottom_toBottomOf="@id/item10"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TextContrastCheck" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item1"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn1"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:text="Pack of Chocolates Kit Kat" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit1"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length_in"
+                app:layout_constraintEnd_toStartOf="@id/amount1"
+                app:layout_constraintStart_toEndOf="@id/item1"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:text="10011" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount1"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:text="12756789" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item1" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item2"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage|textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn2"
+                app:layout_constraintTop_toBottomOf="@id/item1" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit2"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length"
+                app:layout_constraintEnd_toStartOf="@id/amount2"
+                app:layout_constraintStart_toEndOf="@id/item2"
+                app:layout_constraintTop_toBottomOf="@id/unit1" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount2"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount1" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item2" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item3"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage|textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn3"
+                app:layout_constraintTop_toBottomOf="@id/item2" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit3"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length"
+                app:layout_constraintEnd_toStartOf="@id/amount3"
+                app:layout_constraintStart_toEndOf="@id/item3"
+                app:layout_constraintTop_toBottomOf="@id/unit2" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount3"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount2" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item3" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item4"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage|textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn4"
+                app:layout_constraintTop_toBottomOf="@id/item3" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit4"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length"
+                app:layout_constraintEnd_toStartOf="@id/amount4"
+                app:layout_constraintStart_toEndOf="@id/item4"
+                app:layout_constraintTop_toBottomOf="@id/unit3" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount4"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount3" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item4" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item5"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage|textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn5"
+                app:layout_constraintTop_toBottomOf="@id/item4" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit5"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length"
+                app:layout_constraintEnd_toStartOf="@id/amount5"
+                app:layout_constraintStart_toEndOf="@id/item5"
+                app:layout_constraintTop_toBottomOf="@id/unit4" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount5"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount4" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item5" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item6"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage|textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn6"
+                app:layout_constraintTop_toBottomOf="@id/item5" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit6"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length"
+                app:layout_constraintEnd_toStartOf="@id/amount6"
+                app:layout_constraintStart_toEndOf="@id/item6"
+                app:layout_constraintTop_toBottomOf="@id/unit5" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount6"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount5" />
+
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item6" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item7"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage|textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn7"
+                app:layout_constraintTop_toBottomOf="@id/item6" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit7"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length"
+                app:layout_constraintEnd_toStartOf="@id/amount7"
+                app:layout_constraintStart_toEndOf="@id/item7"
+                app:layout_constraintTop_toBottomOf="@id/unit6" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount7"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount6" />
+
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item7" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item8"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage|textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn8"
+                app:layout_constraintTop_toBottomOf="@id/item7" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit8"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length"
+                app:layout_constraintEnd_toStartOf="@id/amount8"
+                app:layout_constraintStart_toEndOf="@id/item8"
+                app:layout_constraintTop_toBottomOf="@id/unit7" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount8"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount7" />
+
+            <View
+                android:id="@+id/divider9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item8" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item9"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage|textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn9"
+                app:layout_constraintTop_toBottomOf="@id/item8" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit9"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length"
+                app:layout_constraintEnd_toStartOf="@id/amount9"
+                app:layout_constraintStart_toEndOf="@id/item9"
+                app:layout_constraintTop_toBottomOf="@id/unit8" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount9"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount8" />
+
+            <View
+                android:id="@+id/divider10"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item9" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item10"
+                style="@style/Widget.Priceelist.TextInput.Items2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage|textAutoCorrect|text|textCapSentences"
+                android:maxLength="@integer/input_max_length"
+                app:layout_constraintStart_toEndOf="@id/sn10"
+                app:layout_constraintTop_toBottomOf="@id/item9" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit10"
+                style="@style/Widget.Priceelist.TextInput.Units2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/qty_max_length"
+                app:layout_constraintEnd_toStartOf="@id/amount10"
+                app:layout_constraintStart_toEndOf="@id/item10"
+                app:layout_constraintTop_toBottomOf="@id/unit9" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount10"
+                style="@style/Widget.Priceelist.TextInput.Amounts2"
+                android:layout_marginTop="1dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/price_max_length"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount9" />
+
+            <View
+                android:id="@+id/divider11"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_001"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item10" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/other_details_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/client_form_margin"
+                android:orientation="horizontal"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                app:layout_constraintTop_toBottomOf="@id/divider11">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/circle_frame_2"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="@dimen/between_lists"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/small_circle"
+                    app:tint="@color/primary1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="2"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/circle_frame_2"
+                    app:layout_constraintEnd_toEndOf="@+id/circle_frame_2"
+                    app:layout_constraintStart_toStartOf="@+id/circle_frame_2"
+                    app:layout_constraintTop_toTopOf="@+id/circle_frame_2"
+                    tools:layout_editor_absoluteY="2dp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/other_details"
+                    android:textColor="@color/primary1"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/circle_frame_2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/add_note_layout"
+                style="@style/Widget.Priceelist.Note.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/list_item_spacing"
+                android:layout_marginEnd="@dimen/bottom_sheet_2"
+                android:hint="@string/add_a_note"
+                app:helperText="E.g. Date due: 25th December, 2021"
+                app:hintTextColor="@color/primary1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/other_details_header">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/add_note_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:inputType="textMultiLine|text|textAutoComplete|textCapSentences"
+                    android:maxLength="@integer/note"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
